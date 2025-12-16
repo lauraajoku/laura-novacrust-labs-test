@@ -2,6 +2,19 @@
 
 Next.js + Tailwind playground for the crypto convert UI task.
 
+## Tech Stack
+- Next.js (App Router)
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+
+---
+
+## Implemented Screens
+- Crypto to Cash – Amount entry
+- Recipient Details
+
 ## Prerequisites
 - Node.js 18+ (LTS recommended)
 - pnpm installed globally: `npm install -g pnpm`
