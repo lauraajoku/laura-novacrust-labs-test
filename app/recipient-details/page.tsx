@@ -13,7 +13,7 @@ const RecipientDetails = () => {
   const [accountNumber, setAccountNumber] = useState<string>("");
 
   return (
-    <div className="bg-gray-200 h-dvh flex items-center px-4">
+    <div className="bg-gray-200 min-h-dvh flex justify-center py-10 px-4">
       <div className="w-full mx-auto rounded-[30px] md:max-w-160 py-10 px-6 md:px-16 bg-white">
         <div className="w-full mb-10 flex items-center">
           <IoIosArrowRoundBack
