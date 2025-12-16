@@ -10,17 +10,26 @@ const CryptoConvert = () => {
   const [payAmount, setPayAmount] = useState<string>("");
   const [payError, setPayError] = useState<string>("");
 
-
   const handlePayAmountChange = (value: string) => {
-    const numericValue = value.replace(/[^\d.]/g, "");
-    const asNumber = parseFloat(numericValue);
+    if (!/^\d*\.?\d*$/.test(value)) return;
+    setPayAmount(value);
 
-    if (asNumber <= 0) {
+    const num = Number(value);
+
+    if (!value || isNaN(num) || num <= 0) {
       setPayError("Please enter an amount greater than 0");
     } else {
       setPayError("");
     }
-    setPayAmount(numericValue);
+  };
+
+  const handlePayAmountBlur = () => {
+    if (!payAmount) return;
+
+    const num = Number(payAmount);
+    if (!isNaN(num)) {
+      setPayAmount(num.toFixed(2));
+    }
   };
 
   return (
@@ -35,6 +44,7 @@ const CryptoConvert = () => {
             action={"pay"}
             amount={payAmount}
             onAmountChange={handlePayAmountChange}
+            onBlur={handlePayAmountBlur}
             error={payError}
           />
           {/* ------ amount you receive ------ */}

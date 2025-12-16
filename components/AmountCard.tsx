@@ -7,6 +7,7 @@ interface AmountCardProps {
   action: string;
   amount: string;
   onAmountChange: (value: string) => void;
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
   error: string;
 }
 
@@ -15,6 +16,7 @@ const AmountCard: React.FC<AmountCardProps> = ({
   amount,
   onAmountChange,
   error,
+  onBlur
 }) => {
   return (
     <div>
@@ -27,6 +29,7 @@ const AmountCard: React.FC<AmountCardProps> = ({
             value={amount}
             onChange={(e) => onAmountChange(e.target.value)}
             className="font-semibold text-lg md:text-2xl max-w-40 md:max-w-full outline-none"
+            onBlur={onBlur}
           />
           <CurrencySelector />
         </div>
