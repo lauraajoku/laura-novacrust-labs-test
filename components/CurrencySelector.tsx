@@ -82,7 +82,7 @@ const CurrencySelector = () => {
 
       {/* ------ dropdown open ------ */}
       {open && (
-        <div className="absolute font-outfit mt-1 bg-white w-66 flex flex-col gap-2 border px-3 py-4 rounded-4xl border-[#E0E0E0] z-50">
+        <div className="absolute right-0 font-outfit mt-1 bg-white w-66 flex flex-col gap-2 border px-3 py-4 rounded-4xl border-[#E0E0E0] z-50">
           {/* ------ search bar ------ */}
           <div className="flex relative items-center rounded-4xl border border-[#E0E0E0] px-4 py-3">
             <CiSearch className="absolute w-5 h-5" color="#828282" />
